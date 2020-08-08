@@ -1,9 +1,10 @@
 const mongoose = require('mongoose')
 
 const smartiniSchema = new mongoose.Schema({
-  name:  { type: String, required: true },
-  color:  { type: String, required: true },
-  readyToEat: Boolean,
+  CreateGame:  { type: String, required: true },
+  NewQuestion:  { type: String, required: true },
+  CreateQuestion: { type: String, required: true },
+  
 })
 
 const Smartini = mongoose.model('Smartini', smartiniSchema)

@@ -17,11 +17,23 @@ const isAuthenticated = (req, res, next) => {
 
 // ROUTES
 // index
-router.get('/', isAuthenticated, (req, res)=>{
-  Smartini.find({}, (error, allSmartini)=>{
-    
-  })
+router.get('/', (req, res)=>{
+  res.render('game/home',{})
 })
+
+router.get('/random', (req, res)=>{
+  res.render('game/random',{})
+})
+
+router.get('/create', (req, res)=>{
+  res.render('game/create',{})
+})
+
+router.get('/play', (req, res)=>{
+  res.render('game/play',{})
+})
+
+
 
 // new
 router.get('/new', isAuthenticated, (req, res) => {
