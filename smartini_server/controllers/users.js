@@ -14,6 +14,14 @@ const generateAuthToken = () => {
     return crypto.randomBytes(30).toString('hex');
 }
 
+userRouter.get('/login', (req, res)  => {
+    res.render('login/login')
+})
+
+userRouter.get('/create', (req, res)  => {
+    res.render('login/sign-up')
+})
+
 // create new user
 userRouter.post('/register', (req, res) => {
     // Hash the password before putting it in the database
@@ -38,11 +46,19 @@ userRouter.post('/login', (req, res) => {
             const authToken = generateAuthToken();
             res.cookie('AuthToken', authToken);
             res.redirect('/smartini');
+            console.log('logged in');
         } else {
             console.log('User not found.');
-            res.redirect('/register');
+            res.redirect('/users/register');
         }
     });
 })
+
+userRouter.post('/logout', (req, res) => {
+    res.cookie('AuthToken', null);
+    res.redirect('/smartini');
+
+}) 
+
 
 module.exports = userRouter;

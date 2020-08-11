@@ -1,0 +1,17 @@
+<form action="/users/login" method="POST">
+    <div class="column">
+         <p>Login to your account! Type in a username and password. Click on Create Account or Login</p>  
+        <li class="username">
+            <input type="text" placeholder="Username" name="username" />
+        </li>
+    </div>
+    <div class="column">
+        <li><input type="password" placeholder="Password" name="password"></li>
+    </div>
+    <div class="column">
+        {{!-- <li class="has-button"><a class="small button" href="#">Login</a>
+        </li> --}}
+        <input type="submit" class="small button" value="Login" />
+        
+    </div>
+</form>

@@ -1,0 +1,18 @@
+<form action="/users/register" method="POST">
+    <div class="column">
+        <p>Sign up for an account. Type in a username and password. Click on Create Account.</p>    
+       
+        <li class="username">
+            <input type="text" placeholder="Username" name="username" />
+        </li>
+    </div>
+    <div class="column">
+        <li><input type="password" placeholder="Password" name="password"></li>
+    </div>
+    <div class="column">
+        {{!-- <li class="has-button"><a class="small button" href="#">Login</a>
+        </li> --}}
+        <input type="submit" class="small button" value="Create Account" />
+      
+    </div>
+</form>

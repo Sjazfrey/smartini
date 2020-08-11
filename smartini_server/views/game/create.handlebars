@@ -1,27 +1,29 @@
-<p class = "3rd">Create Questions</p>
+<form action="/users/register" method="POST"></form>
 
-<p class = "question">Question:</p>
-
-<form>
-  <div class="grid-container">
-    <div class="grid-x grid-padding-x">
-      <div class="medium-6 cell">
-        <label>Question:
-          <input type="text" placeholder="">
-        </label>
-      </div>
-      <div class="medium-6 cell">
-        <label>Answer:
-          <input type="text" placeholder="">
-        </label>
-      </div>
-       <div class="medium-6 cell">
-        <label>Categories:
-          <input type="text" placeholder="">
-        </label>
+<div class="centered">
+  <p class="line">Create A Questions</p>
+  {{#if successful}}
+  <p>Successfully created a question.</p>
+  {{/if}}
+  {{!-- <p class="question">Question:</p> --}}
+  <form action = "/smartini/new" method="POST" class="okay">
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x">
+        <div class="medium-6 cell">
+          <label>Question:
+            <input id="question" name="question" type="text" placeholder="">
+          </label>
+        </div>
+        <div class="medium-6 cell">
+          <label>Answer:
+            <input id="answer" name="answer" type="text" placeholder="">
+          </label>
+        </div>
       </div>
     </div>
-  </div>
-</form>
+    <input type="submit" class="small button" value="Create Questions" />
+  </form>
+ </div>
 
-<a href="/smartini/play" class="button create-game-button">Create </a>
+
+

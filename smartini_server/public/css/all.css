@@ -1,3 +1,60 @@
+
+/* home page */
 .create-game-button {
+
     background-color: green !important;
 }
+
+body {
+    padding-top: 90px !important;
+}
+
+.centered {
+    text-align: center;
+   
+}
+
+/* .right {    
+    text-align: center;
+} */
+/* 
+.Play {
+    margin-left: 15px;    
+} */
+
+.words {
+    margin-left: 30px;
+    margin-right: 30px;
+    text-align: justify;
+   
+}
+
+.title {
+    font-size: 30px; 
+ 
+}
+
+/* create */
+/* .callout {
+    background-color: rgb(178, 178, 245) !important;
+} */
+
+.question {
+    text-align: center;
+}
+.line { 
+    text-align: center;
+    padding-bottom: 50px;
+}
+.okay{
+    
+    align-self: center;
+}
+
+/* random */
+/* .number  p {
+    text-align: center;
+}
+p .random {
+    text-align: center;
+} */

@@ -1,5 +1,8 @@
 const express = require('express');
+// const app = express()
 const router = express.Router();
+const axios = require('axios');
+const sync_request = require('sync-request');
 
 const Smartini = require('../models/smartini.js');
 
@@ -8,17 +11,18 @@ const isAuthenticated = (req, res, next) => {
   const authToken = req.cookies['AuthToken'];
   req.user = authToken;
 
-  if (req.user) {
+  // Executeif (req.user) {
     return next();
-  } else {
-    res.redirect('/sessions/new');
-  }
+  //} else {
+    //res.redirect('/sessions/new');
+  //}
 }
 
 // ROUTES
 // index
-router.get('/', (req, res)=>{
-  res.render('game/home',{})
+router.get('/', isAuthenticated, (req, res)=>{
+  console.log(req.user);
+  res.render('game/home', { isNotLoggedIn : req.user == null })
 })
 
 router.get('/random', (req, res)=>{
@@ -31,9 +35,22 @@ router.get('/create', (req, res)=>{
 
 router.get('/play', (req, res)=>{
   res.render('game/play',{})
+  console.log(getNumberOfRandomQuestions(10));
 })
 
+function getNumberOfRandomQuestions(number) {
 
+  let questions = [];
+
+  for (let i = 0; i < number; i++) {
+
+    let response = sync_request('GET', 'https://jservice.io/api/random');
+    let jsonResponse = JSON.parse(response.getBody())[0];
+    questions.push({ question : jsonResponse.question, answer : jsonResponse.answer});
+  }
+
+  return questions;
+}
 
 // new
 router.get('/new', isAuthenticated, (req, res) => {
@@ -41,14 +58,10 @@ router.get('/new', isAuthenticated, (req, res) => {
 })
 
 // post
-router.post('/', isAuthenticated, (req, res)=>{
-  if(req.body.newQuestion === 'on'){ //if checked, req.body.readyToEat is set to 'on'
-    req.body.newQuestion = true;
-  } else { //if not checked, req.body.readyToEat is undefined
-    req.body.newQuestion = false;
-  }
+router.post('/new', isAuthenticated, (req, res)=>{
+
   Smartini.create(req.body, (error, createdSmartini)=>{
-    res.redirect('/smartini');
+    res.render('game/create', { successful: true })
   })
 })
 
