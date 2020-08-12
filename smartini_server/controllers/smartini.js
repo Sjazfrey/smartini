@@ -34,8 +34,9 @@ router.get('/create', (req, res)=>{
 })
 
 router.get('/play', (req, res)=>{
-  res.render('game/play',{})
-  console.log(getNumberOfRandomQuestions(10));
+  // res.render('/smartini/', { json });
+  let questionAndAnswer = getNumberOfRandomQuestions(10);
+  res.render('game/play', { qna : questionAndAnswer, counter : 0 })
 })
 
 function getNumberOfRandomQuestions(number) {
@@ -64,6 +65,7 @@ router.post('/new', isAuthenticated, (req, res)=>{
     res.render('game/create', { successful: true })
   })
 })
+
 
 // edit
 router.get('/:id/edit', isAuthenticated, (req, res)=>{

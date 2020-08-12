@@ -6,32 +6,60 @@
 }
 
 body {
-    padding-top: 90px !important;
+    padding-top: 45px !important;
 }
 
 .centered {
     text-align: center;
    
 }
+h3 {
+    margin-left: 2rem !important;
+    margin-right: 2rem !important;  
+}
 
-/* .right {    
-    text-align: center;
-} */
-/* 
+
 .Play {
-    margin-left: 15px;    
-} */
+    font-family: cursive;
+    font-size: 20px;
+}
 
 .words {
     margin-left: 30px;
     margin-right: 30px;
+    text-align: justify;   
+}
+
+.justify {
     text-align: justify;
-   
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
 .title {
-    font-size: 30px; 
- 
+    font-family: 'Caesar Dressing', cursive; 
+    font-size: 30px;     
+}
+
+.next {
+    float: right;
+    margin-right: 5rem !important;
+    margin-top: 2rem !important;
+}
+
+.margin top {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.full_screen {
+    height: 100vh;
+    text-align: center;
+}
+
+.ready {
+    margin-top: 50px !important;
+    font-size: 30px !important;
 }
 
 /* create */
@@ -42,12 +70,14 @@ body {
 .question {
     text-align: center;
 }
-.line { 
-    text-align: center;
-    padding-bottom: 50px;
+
+.line{
+    margin-top: 3em;
+    display: justify;
 }
-.okay{
-    
+
+
+.okay {    
     align-self: center;
 }
 

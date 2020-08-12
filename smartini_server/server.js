@@ -25,7 +25,9 @@ mongoose.connection.once('open', ()=>{
 })
 
  
-app.engine('handlebars', exphbs());
+app.engine('handlebars', exphbs({
+    helpers: require('./public/config/helpers')
+}));
 app.set('view engine', 'handlebars');
 app.set("views", path.join(__dirname, "views"));
 
