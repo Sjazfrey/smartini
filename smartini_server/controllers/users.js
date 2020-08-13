@@ -9,17 +9,26 @@ const getHashedPassword = (password) => {
     const hash = sha256.update(password).digest('base64');
     return hash;
 }
+// Middleware
+const isAuthenticated = (req, res, next) => {
 
-const generateAuthToken = () => {
-    return crypto.randomBytes(30).toString('hex');
-}
+    const authToken = req.cookies['AuthToken'];
+    req.user = authToken === "" ? null : authToken;
+  
+    // Executeif (req.user) {
+      return next();
+    //} else {
+      //res.redirect('/sessions/new');
+    //}
+  }
+  
 
-userRouter.get('/login', (req, res)  => {
-    res.render('login/login')
+userRouter.get('/login', isAuthenticated, (req, res)  => {
+    res.render('login/login', { isNotLoggedIn : req.user == null })
 })
 
-userRouter.get('/create', (req, res)  => {
-    res.render('login/sign-up')
+userRouter.get('/create', isAuthenticated, (req, res)  => {
+    res.render('login/sign-up', { isNotLoggedIn : req.user == null })
 })
 
 // create new user
@@ -43,19 +52,18 @@ userRouter.post('/login', (req, res) => {
 
         if (user != null && user.password === getHashedPassword(req.body.password)) {
 
-            const authToken = generateAuthToken();
-            res.cookie('AuthToken', authToken);
+            res.cookie('AuthToken', req.body.username);
             res.redirect('/smartini');
             console.log('logged in');
         } else {
             console.log('User not found.');
-            res.redirect('/users/register');
+            res.redirect('/users/create');
         }
     });
 })
 
-userRouter.post('/logout', (req, res) => {
-    res.cookie('AuthToken', null);
+userRouter.get('/logout', (req, res) => {
+    res.cookie('AuthToken', "");
     res.redirect('/smartini');
 
 }) 

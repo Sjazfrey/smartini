@@ -7,6 +7,8 @@
 
 body {
     padding-top: 45px !important;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .centered {
@@ -47,19 +49,32 @@ h3 {
     margin-top: 2rem !important;
 }
 
-.margin top {
+.margin_top {
     text-align: center;
-    padding-top: 10px;
+    padding-top: 10px;  
+    position: sticky !important;
+
+    position: fixed;
+    top: 0;
+    width: 100%;
+     
+}
+.menu align-center{
+    position: sticky !important;
 }
 
 .full_screen {
     height: 100vh;
     text-align: center;
+    padding-top: 20vh;
 }
 
 .ready {
     margin-top: 50px !important;
     font-size: 30px !important;
+}
+.bar {
+    background-color: lightblue;
 }
 
 /* create */

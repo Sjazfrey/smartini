@@ -19,14 +19,20 @@
 
  {{!-- //https://get.foundation/sites/docs-v5/components/topbar.html   --}}
 <body style="background-color: antiquewhite">
-<div class="margin top">
+<div class="margin_top bar">
  <ul class="menu align-center">
       
   <li><a href="/smartini/">Home</a></li>
+  {{#if isNotLoggedIn}}
   <li><a href="/users/login">Login</a></li>
   <li><a href="/users/create">Create Account</a></li>
+  {{else}}
+  <li><a href="/users/logout">Logout</a></li>
+  {{/if}}
   <li><a href="/smartini/random">Create Game</a></li>
+  {{#unless isNotLoggedIn}}
   <li><a href="/smartini/create">Make Questions</a></li>
+  {{/unless}}
 
  </ul>
 </div>

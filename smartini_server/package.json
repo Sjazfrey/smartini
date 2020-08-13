@@ -19,6 +19,7 @@
     "express-handlebars": "^5.1.0",
     "jquery": "^3.5.1",
     "mongoose": "^5.9.27",
-    "sync-request": "^6.1.0"
+    "sync-request": "^6.1.0",
+    "unescape": "^1.0.1"
   }
 }

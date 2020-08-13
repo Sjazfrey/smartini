@@ -1,10 +1,14 @@
 <script>
     let my_counter = 0;
-    
+    let max_questions = "{{ maxQuestions }}";
+
     function increaseCounter() {
         my_counter++;
-        console.log(my_counter);
-        window.location.hash = "#" + my_counter;
+        if (my_counter >= max_questions) {
+            window.location.hash = "#answers";
+        } else {
+            window.location.hash = "#" + my_counter;
+        }
     }
 </script>
 
@@ -22,7 +26,15 @@
 
 {{#each qna}}
     <div class="full_screen" id="{{@index}}">
-        {{this.question}}
+        {{incrementCounter @index}}. {{this.question}}
         <button class="next button" onclick="increaseCounter()">Next</button>
     </div>
 {{/each}}
+
+<div class="answers full_screen" id="answers">
+    {{#each qna}}
+        <div id="{{@index}}">
+            {{incrementCounter @index}}. {{this.question}}: <b>{{this.answer}}</b>
+        </div>
+    {{/each}}
+</div>

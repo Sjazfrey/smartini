@@ -3,7 +3,7 @@
 
   {{!-- <p class="number">Number of Questions</p> --}}
 
-  <form>
+  <form action="/smartini/play" method="POST">
     <div class="grid-container">
       <div class="grid-x grid-padding-x">
         <div class="small-5"></div>
@@ -14,24 +14,21 @@
         </div>
         <div class="medium-12 cell">
           <div class="switch small">
-            <input id="exampleRadioSwitch1" type="radio" checked name="testGroup">
+            <input id="exampleRadioSwitch1" type="radio" checked name="questionType" value="random">
             <label for="exampleRadioSwitch1">Random Questions</label>
           </div> 
 
           <div class="switch small">
-            <input id="exampleRadioSwitch2" type="radio" name="testGroup">
+            <input id="exampleRadioSwitch2" type="radio" name="questionType" value="mine">
             <label for="exampleRadioSwitch2">My Questions</label>
-          </div> 
-          <div class="switch small">
-            <input id="exampleRadioSwitch2" type="radio" name="testGroup">
-            <label for="exampleRadioSwitch2">Mixed</label>
           </div> 
         </div>
       </div>
     </div>
+    <input class="button create-game-button" type="submit" value="Start Game" />
   </form>  
 
-  <a href="/smartini/play" class="button create-game-button">Start Game</a>
+  {{!-- <a href="/smartini/play" class="button create-game-button">Start Game</a> --}}
 </div>
 
 
