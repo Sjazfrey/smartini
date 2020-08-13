@@ -1,0 +1,78 @@
+<script>
+  function showCategories() {
+    console.log('show');
+    document.getElementById('selectdiv').style.display = 'inherit';
+    document.getElementById('makeQuestions').style.display = 'none';
+  }
+
+  function hideCategories() {
+    console.log('hide');
+    document.getElementById('selectdiv').style.display = 'none';
+    document.getElementById('makeQuestions').style.display = 'inherit';
+  }
+</script>
+
+<div class="success centered">
+  <p class="random">Random Game</p>
+
+  {{!-- <p class="number">Number of Questions</p> --}}
+
+  <form action="/smartini/play" method="POST">
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x">
+        <div class="small-5"></div>
+        <div class="small-2 cell">
+          <label>Number of questions
+            <input type="number" id="numberOfQuestions" name="numberOfQuestions" value="10" />
+          </label>
+        </div>
+        <div class="medium-12 cell">
+          <div class="switch small">
+            <input id="exampleRadioSwitch1" type="radio" checked name="questionType" value="random" onclick="showCategories()">
+            <label for="exampleRadioSwitch1">Random Questions</label>
+          </div>
+
+          <div class="switch small">
+            <input id="exampleRadioSwitch2" type="radio" name="questionType" value="mine" onclick="hideCategories()">
+            <label for="exampleRadioSwitch2">My Questions</label>
+          </div>
+        </div>
+        <div id="makeQuestions">If you have not made any questions or want to make new questions go to the Make Questions page. If you are ready to use your questions, then hit Start Game!</div>
+        <div id="selectdiv" class="clabel">
+          <label for="category">Choose a Category:</label>
+          <select id="category" name="category">
+            <option value="-1">Any Category</option>
+            <option value="9">General Knowledge</option>
+            <option value="10">Entertainment: Books</option>
+            <option value="11">Entertainment: Film</option>
+            <option value="12">Entertainment: Music</option>
+            <option value="13">Entertainment: Musicals & Theatres</option>
+            <option value="14">Entertainment: TV</option>
+            <option value="15">Entertainment: Video Game</option>
+            <option value="16">Entertainment: Board Game</option>
+            <option value="17">Science & Nature</option>
+            <option value="18">Science & Computers</option>
+            <option value="19">Science & Mathematics</option>
+            <option value="20">Mythology</option>
+            <option value="21">Sports</option>
+            <option value="22">Geography</option>
+            <option value="23">History</option>
+            <option value="24">Politics</option>
+            <option value="25">Art</option>
+            <option value="26">Celebraties</option>
+            <option value="27">Animals</option>
+            <option value="28">Vehicles</option>
+            <option value="29">Entertainment: Comics</option>
+            <option value="30">Science: Gadgets</option>
+            <option value="31">Entertainment: Japenese Anime & Mange</option>
+            <option value="32">Entertainment: Cartoon & Animations</option>
+          </select>
+
+        </div>
+      </div>
+    </div>
+    <input class="button create-game-button" type="submit" value="Start Game" />
+  </form>
+
+  {{!-- <a href="/smartini/play" class="button create-game-button">Start Game</a> --}}
+</div>

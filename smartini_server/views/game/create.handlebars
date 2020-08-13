@@ -1,0 +1,32 @@
+<form action="/users/register" method="POST"></form>
+
+<div class="centered padding">
+
+ <h5 class="line">Create Questions</h5>
+  <p class="justify"> Write in your own question and answer in the box below. Click Create Question when done. Create how many questions you would like. Once you have created all your questions click on finished and it will take you to your questions.</p>
+  {{#if successful}}
+  <p>Successfully created a question.</p>
+  {{/if}}
+  {{!-- <p class="question">Question:</p> --}}
+  <form action = "/smartini/new" method="POST" class="okay">
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x">
+        <div class="medium-6 cell">
+          <label>Question:
+            <input id="question" name="question" type="text" placeholder="">
+          </label>
+        </div>
+        <div class="medium-6 cell">
+          <label>Answer:
+            <input id="answer" name="answer" type="text" placeholder="">
+          </label>
+        </div>
+      </div>
+    </div>
+    <input type="submit" class="small button" value="Create Questions" />
+    <a href="/smartini/random" class="button create-game-button">Finished</a>
+  </form>
+ </div>
+
+
+

@@ -1,0 +1,138 @@
+
+/* home page */
+.create-game-button {
+
+    background-color: green !important;
+   
+}
+
+body {
+    padding-top: 45px !important;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.centered {
+    text-align: center;
+    margin-top: 100px;
+}
+h3 {
+    margin-left: 2rem !important;
+    margin-right: 2rem !important;  
+}
+
+
+.Play {
+    font-family: cursive;
+    font-size: 20px;
+   
+}
+
+.card {
+    max-width: 80vw;
+    height: 200px;
+    color: lightblue;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    padding-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px !important;
+    box-shadow: 0px 5px 10px black !important;
+}
+
+.words {
+    margin-left: 30px;
+    margin-right: 30px;
+    text-align: justify;   
+}
+
+.justify {
+    text-align: justify;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.title {
+    font-family: 'Caesar Dressing', cursive; 
+    font-size: 30px;     
+}
+
+.next {
+    float: right;
+    margin-right: 5rem !important;
+    margin-top: 2rem !important;
+}
+
+.margin_top {
+    text-align: center;
+    padding-top: 10px;  
+    position: sticky !important;
+    position: fixed !important;
+    /* top: 10px; */
+    width: 100%;
+     
+}
+.menu align-center{
+    position: sticky !important;
+}
+
+.full_screen {
+    height: 100vh;
+    text-align: center;
+    padding-top: 20vh;
+}
+
+.ready {
+    margin-top: 95px !important;
+    font-size: 30px !important;
+}
+.bar {
+    background-color: lightblue;
+}
+/* #category {
+    margin-left: auto;
+    margin-right: auto;
+} */
+.clabel {
+    margin-left: auto;
+    margin-right: auto;
+}
+#makeQuestions {
+    max-width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+    display: none;
+    padding-bottom: 30px;
+}
+/* .button {
+    margin-left: 270px !important;
+} */
+
+/* create */
+/* .callout {
+    background-color: rgb(178, 178, 245) !important;
+} */
+
+.question {
+    text-align: center;
+}
+
+.line{
+    margin-top: 3em;
+    display: justify;
+}
+
+
+.okay {    
+    align-self: center;
+}
+
+/* random */
+/* .number  p {
+    text-align: center;
+}
+p .random {
+    text-align: center;
+} */
