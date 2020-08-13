@@ -35,18 +35,18 @@ router.get('/create', isAuthenticated, (req, res)=>{
   res.render('game/create',{ isNotLoggedIn : req.user == null })
 })
 
-router.post('/play', (req, res)=>{
+router.post('/play', isAuthenticated, (req, res)=>{
   console.log(req.body);
   //render myquestion button info on random page
   if (req.body.questionType === 'random') {
-    let questionAndAnswer = getNumberOfRandomQuestions(req.body.numberOfQuestions);
-    res.render('game/play', { qna : questionAndAnswer, maxQuestions : req.body.numberOfQuestions })
+    let questionAndAnswer = getNumberOfRandomQuestions(req.body.numberOfQuestions, req.body.category);
+    res.render('game/play', { qna : questionAndAnswer, maxQuestions : req.body.numberOfQuestions, isNotLoggedIn : req.user == null })
   } else if (req.body.questionType === 'mine') {
-    getNumberOfMyQuestions(res, req.body.numberOfQuestions);
+    getNumberOfMyQuestions(res, req, req.body.numberOfQuestions);
   }
 })
 
-function getNumberOfMyQuestions(res, number) {
+function getNumberOfMyQuestions(res, req, number) {
 
   let questions = [];
 
@@ -66,15 +66,21 @@ function getNumberOfMyQuestions(res, number) {
         })
     }
 
-    res.render('game/play', { qna : questions, maxQuestions : number })
+    res.render('game/play', { qna : questions, maxQuestions : number, isNotLoggedIn : req.user == null })
   })
 }
 
-function getNumberOfRandomQuestions(number) {
+function getNumberOfRandomQuestions(number, category) {
 
   let questions = [];
 
-  let response = sync_request('GET', 'https://opentdb.com/api.php?type=multiple&amount=' + number);
+  let url = 'https://opentdb.com/api.php?type=multiple&amount=' + number;
+
+  if (category > 0) {
+    url = url + '&category=' + category;
+  }
+
+  let response = sync_request('GET', url);
 
   let jsonResponse = JSON.parse(JSON.stringify(JSON.parse(response.getBody())));
 

@@ -26,7 +26,7 @@
 
 {{#each qna}}
     <div class="full_screen" id="{{@index}}">
-        {{incrementCounter @index}}. {{this.question}}
+        <div class="card">{{incrementCounter @index}}. {{this.question}}</div>
         <button class="next button" onclick="increaseCounter()">Next</button>
     </div>
 {{/each}}

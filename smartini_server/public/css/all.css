@@ -3,6 +3,7 @@
 .create-game-button {
 
     background-color: green !important;
+   
 }
 
 body {
@@ -13,7 +14,7 @@ body {
 
 .centered {
     text-align: center;
-   
+    margin-top: 100px;
 }
 h3 {
     margin-left: 2rem !important;
@@ -24,6 +25,21 @@ h3 {
 .Play {
     font-family: cursive;
     font-size: 20px;
+   
+}
+
+.card {
+    max-width: 80vw;
+    height: 200px;
+    color: lightblue;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    padding-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px !important;
+    box-shadow: 0px 5px 10px black !important;
 }
 
 .words {
@@ -53,9 +69,8 @@ h3 {
     text-align: center;
     padding-top: 10px;  
     position: sticky !important;
-
-    position: fixed;
-    top: 0;
+    position: fixed !important;
+    /* top: 10px; */
     width: 100%;
      
 }
@@ -70,12 +85,30 @@ h3 {
 }
 
 .ready {
-    margin-top: 50px !important;
+    margin-top: 95px !important;
     font-size: 30px !important;
 }
 .bar {
     background-color: lightblue;
 }
+/* #category {
+    margin-left: auto;
+    margin-right: auto;
+} */
+.clabel {
+    margin-left: auto;
+    margin-right: auto;
+}
+#makeQuestions {
+    max-width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+    display: none;
+    padding-bottom: 30px;
+}
+/* .button {
+    margin-left: 270px !important;
+} */
 
 /* create */
 /* .callout {
