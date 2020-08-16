@@ -141,8 +141,7 @@ h3 {
 
 .chat-main {
     overflow-y: scroll !important;
-	display: grid;
-	grid-template-columns: 1fr 3fr;
+	max-height: 30vw;
 }
 
 /* //smartinichatapp  */
