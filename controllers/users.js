@@ -14,12 +14,8 @@ const isAuthenticated = (req, res, next) => {
 
     const authToken = req.cookies['AuthToken'];
     req.user = authToken === "" ? null : authToken;
-  
-    // Executeif (req.user) {
-      return next();
-    //} else {
-      //res.redirect('/sessions/new');
-    //}
+
+    return next();
   }
   
 

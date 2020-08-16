@@ -13,11 +13,7 @@ const isAuthenticated = (req, res, next) => {
   const authToken = req.cookies['AuthToken'];
   req.user = authToken === "" ? null : authToken;
 
-  // Executeif (req.user) {
-    return next();
-  //} else {
-    //res.redirect('/sessions/new');
-  //}
+  return next();
 }
 
 // ROUTES
@@ -60,8 +56,6 @@ function getNumberOfMyQuestions(res, req, number) {
       // Again query all users but only fetch one offset by our random #
       Smartini.findOne().skip(random).exec(
         function (err, result) {
-          // Tada! random user
-          // console.log(result) 
           questions.push({ question : result.question, answer : result.answer});
         })
     }
