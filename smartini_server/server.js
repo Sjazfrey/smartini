@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express');
 const socketio = require('socket.io'); //added
 const exphbs  = require('express-handlebars');
@@ -5,14 +6,13 @@ const mongoose = require('mongoose')
 
 const app = express();
 
-const basicAuth = require('express-basic-auth')
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser')
 const cors = require('cors');
 const path = require('path');
 const http = require('http');    //added
 const PORT = process.env.PORT || 3003;
-const axios = require('axios');
+const MONGOURL = process.env.MONGOURL || 'mongodb://localhost:27017/smartini';
 const server = http.createServer(app); //added
 const io = socketio(server); //added
 
@@ -74,13 +74,12 @@ io.on('connection', socket => {
 
 const smartiniController = require('./controllers/smartini.js');
 const userController = require('./controllers/users.js');
-const { Socket } = require('dgram');
 
 
 // Error / Disconnection
 mongoose.connection.on('error', err => console.log(err.message + ' is Mongod not running?'))
 mongoose.connection.on('disconnected', () => console.log('mongo disconnected'))
-mongoose.connect('mongodb://localhost:27017/smartini', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(MONGOURL, { useNewUrlParser: true, useUnifiedTopology: true })
 mongoose.connection.once('open', ()=>{
     console.log('connected to mongoose...')
 })
