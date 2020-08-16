@@ -89,7 +89,7 @@ h3 {
     font-size: 30px !important;
 }
 .bar {
-    background-color: lightblue;
+    background-color: #d7fada;
 }
 /* #category {
     margin-left: auto;
@@ -106,15 +106,6 @@ h3 {
     display: none;
     padding-bottom: 30px;
 }
-/* .button {
-    margin-left: 270px !important;
-} */
-
-/* create */
-/* .callout {
-    background-color: rgb(178, 178, 245) !important;
-} */
-
 .question {
     text-align: center;
 }
@@ -129,10 +120,95 @@ h3 {
     align-self: center;
 }
 
-/* random */
-/* .number  p {
-    text-align: center;
+.chat-container {
+	max-width: 800px;
+	background: rgb(243, 240, 242);
+	margin: 30px auto;
+    overflow: hidden;
+    text-size-adjust: 20px;
 }
-p .random {
-    text-align: center;
-} */
+
+.chat-header {
+	background: rgb(75, 75, 241);
+	color: antiquewhite;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	padding: 15px;
+	display: flex;
+	/* align-items: center; */
+	justify-content: space-between;
+}
+
+.chat-main {
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+}
+
+/* //smartinichatapp  */
+.chat-messages {
+	padding: 30px;
+	max-height: 500px;
+	/* overflow-y: scroll; */
+} 
+
+.chat-form-container {
+	padding: 20px 30px;
+	background-color: lightblue;
+}
+
+.chat-form-container form {
+	display: flex;
+}
+
+.chat-form-container input[type='text'] {
+	font-size: 16px;
+	padding: 5px;
+	height: 40px;
+	flex: 1;
+}
+
+/* Join Page */
+.join-container {
+	max-width: 500px;
+	margin: 80px auto;
+	color: white
+}
+
+.join-header {
+	text-align: center;
+	padding: 20px;
+	background: blue;
+	border-top-left-radius: 30px;
+	border-top-right-radius: 30px;
+}
+
+.join-main {
+	padding: 30px 40px;
+	background: lightseagreen;
+}
+
+.join-main p {
+	margin-bottom: 20px;
+}
+
+.join-main .form-control {
+	margin-bottom: 20px;
+}
+
+.join-main input[type='text'] {
+	font-size: 16px;
+	padding: 5px;
+	height: 40px;
+	width: 100%;
+}
+
+.join-main select {
+	font-size: 18px;
+	padding: 5px;
+	height: 40px;
+	width: 100%;
+}
+
+#msg{
+    text-size-adjust: 30px;
+}

@@ -10,6 +10,14 @@
             window.location.hash = "#" + my_counter;
         }
     }
+       function decreaseCounter() {
+        my_counter--;
+        if (my_counter >= max_questions) {
+            window.location.hash = "#answers";
+        } else {
+            window.location.hash = "#" + my_counter;
+        }
+    }
 </script>
 
 <p class = "ready centered">Are you ready to play?</p>
@@ -28,6 +36,7 @@
     <div class="full_screen" id="{{@index}}">
         <div class="card">{{incrementCounter @index}}. {{this.question}}</div>
         <button class="next button" onclick="increaseCounter()">Next</button>
+        <button class="next button" onclick="decreaseCounter()">Previous</button>
     </div>
 {{/each}}
 

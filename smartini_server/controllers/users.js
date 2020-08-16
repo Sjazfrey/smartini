@@ -42,6 +42,8 @@ userRouter.post('/register', (req, res) => {
                 console.log('user is created', createdUser);
                 res.redirect('/smartini');
             });
+        } else {
+            res.redirect('/create');
         }
     }));  
 });
