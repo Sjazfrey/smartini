@@ -35,8 +35,11 @@ router.post('/play', isAuthenticated, (req, res)=>{
   console.log(req.body);
   //render myquestion button info on random page
   if (req.body.questionType === 'random') {
+    //generate code
+    let gameCode = Math.random().toString(36).substr(2, 5).toUpperCase();
     let questionAndAnswer = getNumberOfRandomQuestions(req.body.numberOfQuestions, req.body.category);
-    res.render('game/play', { qna : questionAndAnswer, maxQuestions : req.body.numberOfQuestions, isNotLoggedIn : req.user == null })
+    //generate code
+    res.render('game/play', { qna : questionAndAnswer, maxQuestions : req.body.numberOfQuestions, isNotLoggedIn : req.user == null, roomCode : gameCode })
   } else if (req.body.questionType === 'mine') {
     getNumberOfMyQuestions(res, req, req.body.numberOfQuestions);
   }
@@ -60,7 +63,8 @@ function getNumberOfMyQuestions(res, req, number) {
         })
     }
 
-    res.render('game/play', { qna : questions, maxQuestions : number, isNotLoggedIn : req.user == null })
+    let gameCode = Math.random().toString(36).substr(2, 5).toUpperCase();
+    res.render('game/play', { qna : questions, maxQuestions : number, isNotLoggedIn : req.user == null, roomCode : gameCode })
   })
 }
 

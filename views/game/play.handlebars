@@ -21,13 +21,23 @@
 </script>
 
 <p class = "ready centered">Are you ready to play?</p>
+<p class = "how">make sure you go to http://smartini.herokuapp.com/ and type in the room code: {{roomCode}}</p>
 
 {{#each qna}}
-    <div class="full_screen" id="{{@index}}">
-        <div class="card">{{incrementCounter @index}}. {{this.question}}</div>
-        <button class="next button" onclick="increaseCounter()">Next</button>
-        <button class="next button" onclick="decreaseCounter()">Previous</button>
-    </div>
+    {{#unless @index}}
+        <div class="full_screen_first" id="{{@index}}">
+            <div class="card">{{incrementCounter @index}}. {{this.question}}</div>
+            <button class="next button" onclick="increaseCounter()">Next</button>
+            <button class="next button" onclick="decreaseCounter()">Previous</button>
+        </div>
+    {{/unless}}
+    {{#if @index}}
+        <div class="full_screen" id="{{@index}}">
+            <div class="card">{{incrementCounter @index}}. {{this.question}}</div>
+            <button class="next button" onclick="increaseCounter()">Next</button>
+            <button class="next button" onclick="decreaseCounter()">Previous</button>
+        </div>
+    {{/if}}
 {{/each}}
 
 <div class="answers full_screen" id="answers">

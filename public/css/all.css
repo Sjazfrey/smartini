@@ -1,9 +1,7 @@
 
 /* home page */
 .create-game-button {
-
-    background-color: green !important;
-   
+    background-color: green !important;   
 }
 
 body {
@@ -16,6 +14,7 @@ body {
     text-align: center;
     margin-top: 100px;
 }
+
 h3 {
     margin-left: 2rem !important;
     margin-right: 2rem !important;  
@@ -24,13 +23,18 @@ h3 {
 
 .Play {
     font-family: cursive;
-    font-size: 20px;
-   
+    font-size: 20px;   
+}
+
+.how {
+    text-align: center;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
 .card {
     max-width: 80vw;
-    height: 200px;
+    height: 150px;
     color: lightblue;
     text-align: center;
     display: table-cell;
@@ -70,35 +74,43 @@ h3 {
     padding-top: 10px;  
     position: sticky !important;
     position: fixed !important;
-    /* top: 10px; */
-    width: 100%;
-     
+    width: 100%;     
 }
+
 .menu align-center{
     position: sticky !important;
 }
 
-.full_screen {
-    height: 100vh;
+.full_screen_first {
+    height: 90vh;
     text-align: center;
-    padding-top: 20vh;
+    padding-top: 10vh;
+}
+
+.full_screen {
+    height: 90vh;
+    text-align: center;
+    padding-top: 10vh;
+}
+
+.full_screen .card {
+    margin-top: 100px;
 }
 
 .ready {
     margin-top: 95px !important;
     font-size: 30px !important;
 }
+
 .bar {
     background-color: #d7fada;
 }
-/* #category {
-    margin-left: auto;
-    margin-right: auto;
-} */
+
 .clabel {
     margin-left: auto;
     margin-right: auto;
 }
+
 #makeQuestions {
     max-width: 90vw;
     margin-left: auto;
@@ -106,6 +118,7 @@ h3 {
     display: none;
     padding-bottom: 30px;
 }
+
 .question {
     text-align: center;
 }
@@ -114,7 +127,6 @@ h3 {
     margin-top: 3em;
     display: justify;
 }
-
 
 .okay {    
     align-self: center;
@@ -135,13 +147,13 @@ h3 {
 	border-top-right-radius: 20px;
 	padding: 15px;
 	display: flex;
-	/* align-items: center; */
 	justify-content: space-between;
 }
 
 .chat-main {
     overflow-y: scroll !important;
-	max-height: 30vw;
+    max-height: 30vw;
+    min-height: 30vw;
 }
 
 .btn {
@@ -153,12 +165,9 @@ h3 {
 	font-size: 17px;
 }
 
-
-/* //smartinichatapp  */
 .chat-messages {
 	padding: 30px;
 	max-height: 500px;
-	/* overflow-y: scroll; */
 } 
 
 .chat-form-container {
@@ -221,4 +230,9 @@ h3 {
 
 #msg{
     text-size-adjust: 30px;
+    width: 80vw;
+}
+
+.answers {
+    overflow: auto;
 }

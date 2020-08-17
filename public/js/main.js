@@ -40,7 +40,7 @@ function outputMessage(message) {
         console.log(message);
         const div = document.createElement('div');
         div.classList.add('message');
-        div.innerHTML = `<p class="meta">${message.username}</p>
+        div.innerHTML = `<p class="meta"><strong>${message.username}</strong></p>
         <p class="text">
             ${message.text}
         </p>`;
