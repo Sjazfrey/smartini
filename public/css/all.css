@@ -144,6 +144,16 @@ h3 {
 	max-height: 30vw;
 }
 
+.btn {
+	cursor: pointer;
+	padding: 5px 15px;
+	background: rgb(27, 8, 236);
+	color:white;
+	border: 0;
+	font-size: 17px;
+}
+
+
 /* //smartinichatapp  */
 .chat-messages {
 	padding: 30px;
