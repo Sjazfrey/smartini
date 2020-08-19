@@ -64,7 +64,10 @@ function getNumberOfMyQuestions(res, req, number) {
     }
 
     let gameCode = Math.random().toString(36).substr(2, 5).toUpperCase();
-    res.render('game/play', { qna : questions, maxQuestions : number, isNotLoggedIn : req.user == null, roomCode : gameCode })
+
+    setTimeout(function(){
+      res.render('game/play', { qna : questions, maxQuestions : number, isNotLoggedIn : req.user == null, roomCode : gameCode })
+    }, 3000);
   })
 }
 
