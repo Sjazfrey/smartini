@@ -22,7 +22,7 @@
 
 <p class = "ready centered">Are you ready to play?</p>
 <p class = "how">make sure you go to http://smartini.herokuapp.com/ and type in the room code: {{roomCode}}</p>
-
+{{!-- https://handlebarsjs.com/guide/builtin-helpers.html#each --}}
 {{#each qna}}
     {{#unless @index}}
         <div class="full_screen_first" id="{{@index}}">
